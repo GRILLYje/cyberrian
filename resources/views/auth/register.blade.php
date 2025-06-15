@@ -50,3 +50,9 @@
         </div>
     </form>
 </x-guest-layout>
+
+<style>
+    *, :before, :after {
+    border-style: none;
+    }
+</style>

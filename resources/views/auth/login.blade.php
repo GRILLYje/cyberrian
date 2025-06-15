@@ -4,8 +4,8 @@
 
     <!-- Logo and Title -->
     <div class="text-center mb-8">
-        <img src="{{ asset('images/PIC.png') }}" alt="Cyber Rian Logo" class="w-20 h-20 mx-auto mb-4">
-        <h1 class="text-2xl font-bold text-white">CYBER RIAN</h1>
+        <img src="{{ asset('images/PIC.png') }}" alt="Cyber Rian Logo" class="w-20 h-40 mx-auto mb-4">
+        <img src="{{ asset('images/name.png') }}" alt="Cyber Rian Name" class="w-40 h-auto mx-auto">
     </div>
 
     <form method="POST" action="{{ route('login') }}">
@@ -37,7 +37,7 @@
             </label>
 
             @if (Route::has('password.request'))
-                <a class="text-sm text-blue-400 hover:text-blue-300 hover:underline" href="{{ route('password.request') }}">
+                <a class="text-sm text-blue-400 hover:text-blue-300 hover:underline" href="{{ route('password.request') }}" style="color: #76F1FF;">
                     {{ __('Forgot Password?') }}
                 </a>
             @endif
@@ -53,7 +53,13 @@
         <!-- Sign Up Link -->
         <div class="text-center">
             <span class="text-gray-400 text-sm">Don't have an account? </span>
-            <a href="{{ route('register') }}" class="text-blue-400 hover:text-blue-300 text-sm hover:underline">Sign up</a>
+            <a href="{{ route('register') }}" class="signup" style="color: #76F1FF;">Sign up</a>
         </div>
     </form>
 </x-guest-layout>
+
+<style>
+    *, :before, :after {
+    border-style: none;
+    }
+</style>
