@@ -20,6 +20,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 
 <body class="font-sans antialiased">
@@ -43,6 +44,7 @@
         <!-- Page Footer -->
          @include('components.footer')
     </div>
+    @livewireScripts
 </body>
 
 </html>
