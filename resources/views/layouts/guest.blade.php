@@ -19,7 +19,7 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0" style="background: linear-gradient(135deg, #1B222C 0%, #210378 100%);">
-            <div class="w-full sm:max-w-md mt-6 px-8 py-8 bg-gray-800/90 backdrop-blur-sm shadow-2xl overflow-hidden sm:rounded-2xl border border-gray-700">
+            <div class="w-full sm:max-w-md mt-6 px-8 py-8 bg-gray-800/90 backdrop-blur-sm shadow-2xl overflow-hidden sm:rounded-2xl border border-gray-700" style="background-color: rgba(0, 0, 0, 0.25);padding: 20px;border-radius: 20px;">
                 {{ $slot }}
             </div>
         </div>
