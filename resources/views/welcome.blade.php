@@ -7,7 +7,7 @@
                 <img src="{{ asset('images/suggest-course/Agent.png') }}" alt="Husky dog" class="h-auto ">
             </div>
             <h1 class="text-5xl text-white font-semibold text-center">
-                น้องไช <span class="text-[#0CA5FF]">อยากแนะนำ !</span> ให้พี่ ๆ ได้เรียนนะ ! โอ้่ง ๆ ๆ
+                น้องไช <span class="text-[#0CA5FF]">อยากแนะนำ !</span> ให้พี่ ๆ ได้เรียนนะ ! โฮ่งๆๆ
             </h1>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1: พื้นฐานของ Cyber Security -->

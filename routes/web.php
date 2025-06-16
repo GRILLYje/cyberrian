@@ -39,6 +39,10 @@ Route::get('/pages/ai', function () {
     return view('/pages/ai');
 })->middleware(['auth', 'verified'])->name('ai');
 
+Route::get('/premium', function () {
+    return view('pages.Premium');
+})->name('premium');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
