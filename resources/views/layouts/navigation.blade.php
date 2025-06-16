@@ -41,9 +41,11 @@
                     <i class="fi fi-rr-search text-xl"></i>
                 </a>
                 <!-- Notification Bell Icon -->
+                @if(Auth::user() )
                 <a href="#" class="text-gray-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-700">
                     <i class="fi fi-rr-bell text-xl"></i>
                 </a>
+                
                 <!-- Dashboard Button -->
                 <a href="{{ route('dashboard') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150">
                     <i class="fi fi-br-stats mr-2"></i>{{ __('Dashboard') }}
@@ -52,13 +54,20 @@
                 <!-- Profile Icon -->
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
+                        @if (Auth::user())
                         <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                            @if (Auth::user()->profile_image)
+                            @if (Auth::user() && Auth::user()->profile_image)
                                 <img class="h-8 w-8 rounded-full object-cover" src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="{{ Auth::user()->name }}" />
                             @else
                                 <img class="h-8 w-8 rounded-full object-cover" src="{{ asset('images/default_profile.png') }}" alt="{{ Auth::user()->name }}" />
                             @endif
                         </button>
+                        @else
+                        <button>
+                            <i class="fi fi-rr-sign-in-alt ml-2">
+                            </i>
+                        </button>
+                        @endif
                     </x-slot>
 
                     <x-slot name="content">
@@ -78,6 +87,15 @@
                         </form>
                     </x-slot>
                 </x-dropdown>
+                @else
+                <a href="{{ route('login') }}" class=" text-white">
+                   เข้าสู่ระบบ
+                </a>
+                <a href="{{ route('register') }}" class="bg-[#2642CD] text-white px-4 py-2 rounded-3xl">
+                   
+                   สมัครสมาชิก
+                </a>
+                @endif
             </div>
 
             <!-- Hamburger (for responsive navigation - hidden on desktop) -->
@@ -93,13 +111,14 @@
     </div>
 
     <!-- Responsive Navigation Menu (hidden on desktop) -->
+ @if (Auth::user())
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
-
+       
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
@@ -123,4 +142,5 @@
             </div>
         </div>
     </div>
+    @endif
 </nav>

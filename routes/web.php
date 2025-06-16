@@ -4,8 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('hero');
 });
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
 Route::get('/welcome', function () {
     return view('welcome');
