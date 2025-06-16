@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="min-h-screen bg-[#1F2937] text-white">
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
         <!-- Suggested Courses Section -->
         <section class="container mx-auto p-8 mt-8 relative">

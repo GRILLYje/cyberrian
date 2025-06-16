@@ -1,8 +1,8 @@
-<nav x-data="{ open: false }" class="bg-gradient-to-r from-[#23079F] to-[#110645] border-b border-gray-100 dark:border-gray-700" style="padding: 10px;border-radius: 20px;">
+<nav x-data="{ open: false }" class="bg-gradient-to-r from-[#23079F] to-[#110645] border-b border-gray-100 dark:border-gray-700" style="padding: 10px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
     <!-- Primary Navigation Menu -->
-    <div class="sm:px-6 lg:px-8">
+    <div class="sm:px-6 lg:px-8 ">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex items-center">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('welcome') }}" class="flex items-center space-x-2">
@@ -12,73 +12,52 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex h-full items-center">
                     <x-nav-link :href="route('learning-path')" :active="request()->routeIs('learning-path')">
                         {{ __('Learning Path') }}
                     </x-nav-link>
-                </div>
-                <!-- Learn -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('learn')" :active="request()->routeIs('learn')">
                         {{ __('Learn') }}
                     </x-nav-link>
-                </div>
-                <!-- Train -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('train')" :active="request()->routeIs('train')">
                         {{ __('Train') }}
                     </x-nav-link>
-                </div>
-                <!-- Challenge -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('challenge')" :active="request()->routeIs('challenge')">
                         {{ __('Challenge') }}
                     </x-nav-link>
-                </div>
-                <!-- Certificate -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('certificate')" :active="request()->routeIs('certificate')">
                         {{ __('Certificate') }}
                     </x-nav-link>
-                </div>
-                <!-- AI -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('ai')" :active="request()->routeIs('ai')">
+                    <x-nav-link :href="route('ai')" :active="request()->routeIs('ai')" class="border-b-2 border-blue-500">
                         {{ __('AI') }}
                     </x-nav-link>
                 </div>
             </div>
 
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+            <!-- Right side icons and profile dropdown -->
+            <div class="flex items-center space-x-4 ml-auto">
                 <!-- Search Icon -->
-                <a href="#" class="inline-flex items-center px-3 py-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <a href="#" class="text-gray-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-700">
+                    <i class="fi fi-rr-search text-xl"></i>
                 </a>
                 <!-- Notification Bell Icon -->
-                <a href="#" class="inline-flex items-center px-3 py-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0a2 2 0 100 4m-6 0a2 2 0 100 4m-9-4h9.234A3.033 3.033 0 0015 17H6"></path></svg>
+                <a href="#" class="text-gray-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-700">
+                    <i class="fi fi-rr-bell text-xl"></i>
                 </a>
-                <!-- Dashboard -->
+                <!-- Dashboard Button -->
                 <a href="{{ route('dashboard') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150">
-                <i class="fi fi-br-stats"></i>{{ __('Dashboard') }}
+                    <i class="fi fi-br-stats mr-2"></i>{{ __('Dashboard') }}
                 </a>
 
+                <!-- Profile Icon -->
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
                             @if (Auth::user()->profile_image)
-                                <img class="h-8 w-8 rounded-full object-cover mr-2" src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="{{ Auth::user()->name }}" />
+                                <img class="h-8 w-8 rounded-full object-cover" src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="{{ Auth::user()->name }}" />
                             @else
-                                <img class="h-8 w-8 rounded-full object-cover mr-2" src="{{ asset('images/default_profile.png') }}" alt="{{ Auth::user()->name }}" />
+                                <img class="h-8 w-8 rounded-full object-cover" src="{{ asset('images/default_profile.png') }}" alt="{{ Auth::user()->name }}" />
                             @endif
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
                         </button>
                     </x-slot>
 
@@ -101,7 +80,7 @@
                 </x-dropdown>
             </div>
 
-            <!-- Hamburger -->
+            <!-- Hamburger (for responsive navigation - hidden on desktop) -->
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -113,7 +92,7 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+    <!-- Responsive Navigation Menu (hidden on desktop) -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -121,7 +100,6 @@
             </x-responsive-nav-link>
         </div>
 
-        <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
@@ -133,7 +111,6 @@
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
-                <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
