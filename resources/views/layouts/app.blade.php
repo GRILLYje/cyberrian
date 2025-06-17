@@ -10,8 +10,10 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 
     <!-- Fonts -->
@@ -29,21 +31,22 @@
 
         <!-- Page Heading -->
         @isset($header)
-        <header class="bg-white dark:bg-gray-800 shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
+            <header class="bg-white dark:bg-gray-800 shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
         @endisset
 
         <!-- Page Content -->
-        <main>
+        <main class=" bg-gradient-to-bl from-[#3700FF00] to-[#0468FF4A]">
+            <div class="absolute inset-0 -z-50 bg-[#1B222C]"></div>
             {{ $slot }}
             @yield('content')
         </main>
 
         <!-- Page Footer -->
-         @include('components.footer')
+        @include('components.footer')
     </div>
     @livewireScripts
 </body>

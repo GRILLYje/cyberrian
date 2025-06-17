@@ -18,19 +18,22 @@
                         สำหรับทุกคน"
                     </span>
                 </h1>
-                <div class="w-1/5 border-2 border-[#0CA5FF] my-4"></div>
-                <p class="text-3xl text-white  w-full tracking-wider leading-loose my-6 ">
-                    เพราะ ความเสี่ยงไซเบอร์ <span class="text-[#0CA5FF]">“ เกิดได้กับทุกคน ”
-                    </span>ไม่ว่าคุณจะเป็นใคร<br /> ทำงานสายไหน หรือ คนที่ใช้เทคโนโลยีในชีวิตประจำวัน คุณก็อาจ<br />
-                    ตกเป็น <span class="text-[#0CA5FF]">เป้าหมาย </span> ของภัยคุกคามทางไซเบอร์ <span
-                        class="text-[#0CA5FF]">ได้ทุกเมื่อ</span>
-                </p>
-                <div class="w-2/3 bg-gradient-to-r from-[#0E57C7] to-[#049EF9] h-1 mt-4 rounded-full"></div>
+                <div class="  my-10">
+                    <div class="w-1/3 border-2 border-[#0CA5FF]"></div>
+                    <p class="text-3xl text-white  w-full tracking-wider leading-loose my-6 ">
+                        เพราะ ความเสี่ยงไซเบอร์ <span class="text-[#0CA5FF]">“ เกิดได้กับทุกคน ”
+                        </span>ไม่ว่าคุณจะเป็นใคร<br /> ทำงานสายไหน หรือ คนที่ใช้เทคโนโลยีในชีวิตประจำวัน คุณก็อาจ<br />
+                        ตกเป็น <span class="text-[#0CA5FF]">เป้าหมาย </span> ของภัยคุกคามทางไซเบอร์ <span
+                            class="text-[#0CA5FF]">ได้ทุกเมื่อ</span>
+                    </p>
+                    <div class="w-2/3 bg-gradient-to-r from-[#0E57C7] to-[#049EF9] h-1 mt-4 rounded-full"></div>
+                </div>
+
 
             </div>
 
             <div class="absolute right-0 -bottom-10">
-                <div class="relative w-[400px]"> <!-- ปรับขนาดตามต้องการ -->
+                <div class="relative w-[450px]"> <!-- ปรับขนาดตามต้องการ -->
                     <img src="{{ asset('images/cyberrian-hero.png') }}" alt="Home Banner"
                         class="w-full object-cover rounded-lg" />
                     <!-- เส้นใต้สีขาว หนา 2px -->
