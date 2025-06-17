@@ -37,21 +37,21 @@
             <!-- Right side icons and profile dropdown -->
             <div class="flex items-center space-x-4 ml-auto">
                 <!-- Search Icon -->
-                <a href="#" class="text-gray-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-700">
+                <a href="#" class="text-gray-400 hover:text-white">
                     <i class="fi fi-rr-search text-xl"></i>
                 </a>
                 <!-- Notification Bell Icon -->
-                <a href="#" class="text-gray-400 hover:text-white flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-700">
+                <a href="#" class="text-gray-400 hover:text-white">
                     <i class="fi fi-rr-bell text-xl"></i>
                 </a>
                 <!-- Dashboard Button -->
                 <a href="{{ route('dashboard') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150">
-                    <i class="fi fi-br-stats mr-2"></i>{{ __('Dashboard') }}
+                    <i class="fi fi-br-grid mr-2"></i>{{ __('Dashboard') }}
                 </a>
 
                 <!-- Profile Icon -->
                 <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
+<x-slot name="trigger">
                         <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
                             @if (Auth::user()->profile_image)
                                 <img class="h-8 w-8 rounded-full object-cover" src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="{{ Auth::user()->name }}" />
@@ -65,6 +65,12 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+
+                        @role('admin')
+                        <x-dropdown-link :href="route('admin.rbca')">
+                            {{ __('RBCA') }}
+                        </x-dropdown-link>
+                        @endrole
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">

@@ -47,6 +47,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // RBCA Routes - accessible only by admin role
+    Route::middleware(\App\Http\Middleware\AdminMiddleware::class)->prefix('admin')->name('admin.')->group(function () {
+        Route::get('/rbca', [App\Http\Controllers\RBCAController::class, 'index'])->name('rbca');
+        Route::put('/users/{user}/update-role', [App\Http\Controllers\RBCAController::class, 'updateRole'])->name('users.updateRole');
+        Route::put('/users/{user}/toggle-ban', [App\Http\Controllers\RBCAController::class, 'toggleBan'])->name('users.toggleBan');
+        Route::put('/users/{user}/toggle-lock', [App\Http\Controllers\RBCAController::class, 'toggleLock'])->name('users.toggleLock');
+        Route::put('/users/{user}/timeout', [App\Http\Controllers\RBCAController::class, 'timeout'])->name('users.timeout');
+    });
 });
 
 require __DIR__.'/auth.php';
